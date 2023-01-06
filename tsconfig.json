@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "declaration": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"]
+  },
+  "files": [
+    "src/runJs.ts",
+    "src/js.worker.ts",
+  ]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Run Js</title>
+</head>
+<body>
+<div class="output"></div>
+<script type="module">
+	const o = document.querySelector(".output")
+	import {runJs} from "./toNPM/runJs.js";
+	runJs({
+		verbose: true,
+		outputElement: o,
+		code: `
+	const {c, e} = lib("SimpleImage")
+	print(7)
+	warn(6)
+	const x = 1 / 12
+	const a=7
+	console.log(a)
+	console.log(c)
+	e()
+	show(11)
+	console.log("OK")
+	checkGlobals(["b"])
+	throw new Error("🚧")
+`, addLib: {SimpleImage: `SimpleImage = {c: 6, e: function() {console.log(2222222)}}`}})
+</script>
+</body>
+</html>
